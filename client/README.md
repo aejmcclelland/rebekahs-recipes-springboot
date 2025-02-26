@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Rebekah's Recipes - Spring Boot & Next.js
+
+## About the Project
+This is a **redevelopment** of the original Rebekah's Recipes project, transitioning from a purely **Next.js** full-stack app to a **Spring Boot** backend with a **Next.js** client-side frontend. The goal is to provide a modern, scalable recipe management application using a **RESTful API** and a **MongoDB** database.
+
+## Tech Stack
+### Backend:
+- **Spring Boot** (Java 17)
+- **Spring Data MongoDB**
+- **Spring Security** (for authentication & authorization)
+- **Maven** (for dependency management)
+
+### Frontend:
+- **Next.js 15** (React-based frontend framework)
+- **Tailwind CSS** (for styling)
+- **daisyUI** (UI components)
+
+### Database:
+- **MongoDB Atlas** (cloud-hosted MongoDB instance)
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+Before running the project, ensure you have the following installed:
+- Java 17 or later
+- Node.js & npm/pnpm
+- MongoDB Atlas account (or local MongoDB instance)
+- Maven
+- Git
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### Cloning the Repository
+```sh
+git clone https://github.com/aejmcclelland/rebekahs-recipes-springboot.git
+cd rebekahs-recipes-springboot
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Backend Setup (Spring Boot)
+1. Navigate to the `server/` directory:
+   ```sh
+   cd server
+   ```
+2. Install dependencies and build the project:
+   ```sh
+   ./mvnw clean package
+   ```
+3. Run the Spring Boot application:
+   ```sh
+   ./mvnw spring-boot:run
+   ```
+4. The API will be available at:
+   ```
+   http://localhost:8080/api/recipes
+   ```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Frontend Setup (Next.js)
+1. Navigate to the `client/` directory:
+   ```sh
+   cd client
+   ```
+2. Install dependencies:
+   ```sh
+   pnpm install
+   ```
+3. Start the development server:
+   ```sh
+   pnpm dev
+   ```
+4. Open `http://localhost:3000` in your browser.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## API Endpoints
+| Method | Endpoint            | Description            |
+|--------|---------------------|------------------------|
+| GET    | `/api/recipes`      | Fetch all recipes     |
+| POST   | `/api/recipes`      | Add a new recipe      |
+| GET    | `/api/recipes/{id}` | Fetch a single recipe |
+| PUT    | `/api/recipes/{id}` | Update a recipe       |
+| DELETE | `/api/recipes/{id}` | Delete a recipe       |
 
-## Learn More
+## Contributing
+Pull requests are welcome! Feel free to open an issue for feature suggestions or bug reports.
 
-To learn more about Next.js, take a look at the following resources:
+## License
+This project is licensed under the **MIT License**.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
+_Developed by Andrew McClelland_ 🚀
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
